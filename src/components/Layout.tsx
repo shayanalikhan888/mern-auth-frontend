@@ -11,6 +11,18 @@ const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
+    useEffect(() => {
+      if (!user) return;
+
+      const interval = setInterval(async () => {
+        try {
+          await api.get("/auth/refresh-token");
+        } catch {}
+      }, 8 * 60 * 1000);
+
+      return () => clearInterval(interval);
+    }, [user]);
+
     const interval = setInterval(async () => {
       try {
         await api.get("/auth/refresh-token");
@@ -20,7 +32,7 @@ const Layout = () => {
     }, 8 * 60 * 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [user]);
 
   const logout = async () => {
     try {
