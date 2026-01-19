@@ -52,7 +52,7 @@ const Layout = () => {
           </h1>
 
           <button
-            className="md:hidden text-slate-300 hover:text-white"
+            className="md:hidden text-slate-300 hover:text-white cursor-pointer"
             onClick={() => setSidebarOpen(false)}
           >
             <HiX size={24} />
@@ -112,7 +112,7 @@ const Layout = () => {
         <header className="h-16 bg-white flex items-center justify-between px-4 md:px-6 border-b shadow-sm">
           <div className="flex items-center gap-4">
             <button
-              className="md:hidden text-gray-700 hover:text-gray-900"
+              className="md:hidden text-gray-700 hover:text-gray-900 cursor-pointer"
               onClick={() => setSidebarOpen(true)}
             >
               <HiMenu size={24} />
