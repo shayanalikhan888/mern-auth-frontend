@@ -1,0 +1,19 @@
+name: Keep Backend Alive
+
+on:
+  schedule:
+    # Run every 10 minutes
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping AWS Lambda Backend
+        run: |
+          # We use the generic endpoint or a specific lightweight route like /
+          # The -I flag fetches headers only (lighter request)
+          # The -m 10 flag sets a 10-second timeout
+          curl -I -m 10 https://tv17aqmsta.execute-api.ap-south-1.amazonaws.com/
+        continue-on-error: true
