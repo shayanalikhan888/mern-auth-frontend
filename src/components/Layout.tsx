@@ -66,6 +66,9 @@ const Layout = () => {
               alt="profile"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = "/pic.jfif";
+              }}
             />
           </div>
           <div>
