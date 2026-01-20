@@ -53,7 +53,7 @@ const Login = () => {
           className="cursor-pointer flex items-center justify-center gap-3 w-full border border-gray-300 py-3 rounded-md hover:bg-gray-100 transition font-medium"
         >
           <img
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            src="google.svg"
             alt="Google"
             className="w-5 h-5"
           />
