@@ -31,7 +31,7 @@ const Signup = () => {
       !formData.password ||
       !formData.dob
     ) {
-      alert("All fields are required");
+      toast.warn("all fields are required");
       return;
     }
 
